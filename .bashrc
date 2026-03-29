@@ -7,7 +7,15 @@
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-PS1='[\u@\h \W]\$ '
+
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
+
+git_color='91'
+name_color='38;5;42'
+dir_color='93'
+PS1="\e[${name_color}m\u@\h\e[0m \e[${dir_color}m\W\e[0m \e[${git_color}m($(parse_git_branch))\e[0m\$ "
 
 # neofetch
 
