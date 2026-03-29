@@ -2,7 +2,7 @@
 	"layer": "top",
 	"modules-left": ["hyprland/workspaces"],
 	"modules-center": [],
-	"modules-right": ["tray", "custom/screenshot", "custom/launcher", "cpu","memory","pulseaudio","clock"],
+	"modules-right": ["tray", "custom/screenshot", "custom/launcher", "battery", "cpu","memory","pulseaudio","clock"],
 	
 	"pulseaudio": {
 		"tooltip": false,
@@ -46,5 +46,17 @@
         "interval": 30,
         "format": " {}%",
         "max-length": 10
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
     }
 }
