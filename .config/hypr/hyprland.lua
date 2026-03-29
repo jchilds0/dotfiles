@@ -20,10 +20,17 @@ local colors = require('mocha')
 
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({
-    output   = "",
+    output   = "DP-2",
     mode     = "preferred",
-    position = "auto",
-    scale    = "1.0",
+    position = "0x0",
+    scale    = "auto",
+})
+
+hl.monitor({
+    output   = "HDMI-A-2",
+    mode     = "preferred",
+    position = "3440x180",
+    scale    = "auto",
 })
 
 -------------------
@@ -36,9 +43,16 @@ hl.monitor({
 -- Or execute your favorite apps at launch like this:
 
 hl.on("hyprland.start", function () 
-  hl.exec_cmd(apps['terminal'])
+  hl.exec_cmd(apps['terminal']) -- workspace 9
+  hl.exec_cmd("firefox") -- workspace 9
+  hl.exec_cmd("spotify-launcher") --workspace 1
+  hl.exec_cmd("xairedit") --workspace 2
+  hl.exec_cmd("pavucontrol") --workspace 3
+
   hl.exec_cmd("nm-applet")
   hl.exec_cmd("waybar")
+  hl.exec_cmd("wayvnc")
+  hl.exec_cmd("protonvpn-app")
   hl.exec_cmd("hyprpaper")
   hl.exec_cmd("hyprpm reload -n")
   hl.exec_cmd("systemctl --user start hyprpolkitagent")
@@ -301,3 +315,12 @@ hl.window_rule({
     move  = "20 monitor_h-120",
     float = true,
 })
+
+-- plugin {
+--     split-monitor-workspaces {
+--         count = 8
+--         keep_focused = 0
+--         enable_notifications = 0
+--         enable_persistent_workspaces = 1
+--     }
+-- }
