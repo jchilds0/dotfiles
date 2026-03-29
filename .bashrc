@@ -22,8 +22,12 @@ alias config='/usr/bin/git --git-dir=/home/josh/.cfg/ --work-tree=/home/josh'
 alias onedrive-desktop='rclone sync --progress Documents/ onedrive:Desktop/ '
 alias onedrive-pictures='rclone sync --progress /media/photos/3.\ Collections/ onedrive:Pictures/'
 
-alias seafile-desktop='rclone sync --progress Documents/ seafile:Documents/ '
-alias seafile-pictures='rclone sync --progress /media/photos/ seafile:Photography/'
+caddy_cert='--ca-cert ~/Documents/caddy-local-authority--ecc-intermediate.pem'
+alias seafile-desktop="rclone sync --progress Documents/ seafile:Documents/"
+alias seafile-pictures="rclone sync --progress /media/photos/ seafile:Photography/"
+
+backup_dirs="$HOME/books $HOME/portfolio $HOME/printing $HOME/programming $HOME/resume $HOME/study"
+alias proton-backup="rclone sync --progress $backup_dirs proton:"
 
 # ruby
 export GEM_HOME="$(gem env user_gemhome)"
@@ -51,6 +55,9 @@ alias bambu-studio-mesa='__GLX_VENDOR_LIBRARY_NAME=mesa __EGL_VENDOR_LIBRARY_FIL
 export PICO_SDK_PATH=$HOME/software/pico/pico-sdk/
 
 # esp32 
-alias get_idf='. $HOME/software/esp-idf/export.sh'
+alias get-idf='. $HOME/software/esp-idf/export.sh'
+
+# freecad
+alias freecad-wayland='QT_QPA_PLATFORM=xcb freecad'
 
 # export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
