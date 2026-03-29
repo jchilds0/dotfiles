@@ -45,11 +45,12 @@ map("n", "<leader>ri", "<cmd>lua require('refactoring').refactor('Inline Variabl
 map("n", "<leader>rn", function() return ":IncRename " .. vim.fn.expand("<cword>") end, { expr = true })
 
 -- misc
-map("n", "<leader>gd", "<cmd>lua vim.buf.declaration<CR>", { desc = "Goto Declaration" })
-map("n", "<leader>gD", "<cmd>lua vim.buf.definition<CR>", { desc = "Goto Definition" })
+map("n", "<leader>gd", "<cmd>lua vim.lsp.buf.declaration<CR>", { desc = "Goto Declaration" })
+map("n", "<leader>gD", "<cmd>lua vim.lsp.buf.definition<CR>", { desc = "Goto Definition" })
 map("n", "<leader>K", "<cmd>lua vim.lsp.buf.hover<CR>", { desc = "Hover" })
 map("n", "<leader>td", "<cmd>lua vim.diagnostic.show()<CR>", { desc = "Diagnostic Show" })
 map("n", "<leader>te", "<cmd>lua vim.diagnostic.enable()<CR>", { desc = "Diagnostic Show" })
+map("n", "<leader>tf", "<cmd>%!clang-format<CR>", { desc = "clang format" })
 
 -- lsp pic<leader>ket
 map("n", "<leader>ld", "<cmd>Telescope diagnostics<CR>", { desc = "Diagnostic" })
@@ -79,7 +80,7 @@ map("n", "<leader>vo", "<cmd>lua require('diffview').open()<CR>", { desc = "Diff
 map("n", "<leader>vc", "<cmd>lua require('diffview').close()<CR>", { desc = "Diff View Close" })
 map("n", "<leader>vt", function() require("nvterm.terminal").new "vertical" end, { desc = "New vertical term" })
 
-        --<leader> harpoon
+--<leader> harpoon
 map("n", "<leader>ht", function() require("nvterm.terminal").new "horizontal" end, { desc = "New horizontal term" })
 map("n", "<leader>hv", "<cmd>Telescope harpoon marks<CR>", { desc = "Harpoon marks show" })
 map("n", "<leader>hm", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", { desc = "Harpoon quick menu"} )
@@ -89,7 +90,7 @@ map("n", "<C-2>", "<cmd>lua require('harpoon.ui').nav_file(2)<CR>", { desc = "Ha
 map("n", "<C-3>", "<cmd>lua require('harpoon.ui').nav_file(3)<CR>", { desc = "Harpoon nav file 3" })
 map("n", "<C-4>", "<cmd>lua require('harpoon.ui').nav_file(4)<CR>", { desc = "Harpoon nav file 4" })
 
-        -- refactoring
+-- refactoring
 map("v", "<leader>re", "<Esc><cmd>lua require('refactoring').refactor('Extract Function')<CR>", { desc = "Extract Function"})
 map("v", "<leader>rf", "<Esc><cmd>lua require('refactoring').refactor('Extract Function To File')<CR>", { desc = "Extract Function To File"})
 map("v", "<leader>rv", "<Esc><cmd>lua require('refactoring').refactor('Extract Variable')<CR>", { desc = "Extract Variable"})
