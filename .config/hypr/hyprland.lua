@@ -316,6 +316,38 @@ hl.window_rule({
     float = true,
 })
 
+-- Left Monitor
+for i = 1, 5 do
+    hl.workspace_rule({
+        workspace = i,
+        monitor = "DP-2",
+        persistent = true,
+    })
+end
+
+for i = 11, 15 do
+    hl.workspace_rule({
+        workspace = i,
+        monitor = "DP-2",
+    })
+end
+
+-- Right Monitor
+for i = 6, 10 do
+    hl.workspace_rule({
+        workspace = i,
+        monitor = "HDMI-A-2",
+        persistent = true,
+    })
+end
+
+for i = 16, 20 do
+    hl.workspace_rule({
+        workspace = i,
+        monitor = "HDMI-A-2",
+    })
+end
+
 -- plugin {
 --     split-monitor-workspaces {
 --         count = 8
