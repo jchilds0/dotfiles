@@ -23,7 +23,7 @@ hl.monitor({
     output   = "",
     mode     = "preferred",
     position = "auto",
-    scale    = "auto",
+    scale    = "1.0",
 })
 
 -------------------
@@ -97,7 +97,7 @@ hl.config({
         border_size = 2,
 
         col = {
-            active_border   = { colors = colors['mauve'], angle = 45 },
+            active_border   = { colors = {colors['mauve']}, angle = 45 },
             inactive_border = colors['base'],
         },
 
