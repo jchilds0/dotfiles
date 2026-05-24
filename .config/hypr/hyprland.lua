@@ -43,11 +43,11 @@ hl.monitor({
 -- Or execute your favorite apps at launch like this:
 
 hl.on("hyprland.start", function () 
-  hl.exec_cmd(apps['terminal']) -- workspace 9
-  hl.exec_cmd("firefox") -- workspace 9
-  hl.exec_cmd("spotify-launcher") --workspace 1
-  hl.exec_cmd("xairedit") --workspace 2
-  hl.exec_cmd("pavucontrol") --workspace 3
+  hl.exec_cmd("pavucontrol", { workspace = 8 }) 
+  hl.exec_cmd("xairedit", { workspace = 7 })
+  hl.exec_cmd("firefox", { workspace = 1 }) 
+  hl.exec_cmd(apps['terminal'], { workspace = 1 })
+  hl.exec_cmd("spotify-launcher", { workspace = 6 }) 
 
   hl.exec_cmd("nm-applet")
   hl.exec_cmd("waybar")
